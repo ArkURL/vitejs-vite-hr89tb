@@ -1,9 +1,12 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
+import axios from '../utils/axios'
 
-defineProps({
-  msg: String,
+axios.get('http://127.0.0.1:4523/m1/2115443-0-default/user')
+.then(res => {
+  console.log(res)
 })
+defineProps<{ msg: string }>()
 
 const count = ref(0)
 </script>
